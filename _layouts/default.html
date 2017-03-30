@@ -2,20 +2,24 @@
 <html>
 <head>
     <title>{{ page.title }}</title>
-    <!-- link to main stylesheet -->
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
+<div>
+    <a href="/"><img src="/Images/BannerLogo.png" /></a>
+</div>
 <nav>
-    <ul>
+    <ul style="margin-bottom: 30px">
         <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="https://github.com/CodonFramework">Source</a></li>
     </ul>
 </nav>
 <div class="container">
-			
+
     {{ content }}
-			
+
 </div><!-- /.container -->
 <footer>
     <ul>

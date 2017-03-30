@@ -3,6 +3,47 @@ layout: default
 title: Codon
 ---
 <div class="blurb">
-    <h1>Hi there, I'm Codon page.</h1>
-    <p>This is some test text.</p>
+    <p>
+        Codon is a zero-dependency cross-platform MVVM framework
+        for creating UWP, WPF, and Xamarin based applications.
+        It provides much of what you need to rapidly create sophisticated
+        yet maintainable applications.
+    </p>
+    <p>To install Codon's core libraries, 
+        run the following command in Visual Studio's 
+        <a href="https://docs.microsoft.com/en-us/nuget/tools/package-manager-console">Package Manager Console</a>:
+    </p>
+    <p style="line-height: 1.538em; margin: 0px 0px 2em;width: 700px">
+        <code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1.3em; font-family: 'andale mono', 'lucida console', monospace; line-height: 1.5em; border: 4px solid silver; border-radius: 5px; box-shadow: rgb(110, 110, 110) 2px 2px 3px; color: rgb(226, 226, 226); display: block; overflow: auto; padding: 15px; background-color: rgb(32, 32, 32);">PM&gt; Install-Package Codon.Essentials</code></p>
+    <p>
+        Codon includes two main libraries: a minimal core library and an extras library.
+        Codon's core includes the following features:
+        <ul>
+            <li>An easy to use ICommand implementation</li>
+            <li>Frictionless INPC</li>
+            <li>A cross-platform settings service</li>
+            <li>IoC and DI</li>
+            <li>Logging support</li>
+            <li>and a weak referencing pub/sub messenger</li>
+        </ul>  
+    </p>
+    <p>
+        Codon Extras includes the following features:
+        <ul>
+            <li>A user options system</li>
+            <li>Form input validation</li>
+            <li>Application state preservation</li>
+            <li>Various cross-platform launchers for sharing links, sending emails and so forth</li>
+        </ul>
+    </p>
+    <p>
+        In addition to the Codon.Extras package,
+        Codon includes a data-binding library, 
+        <a href="https://www.nuget.org/packages/Codon.UI.Data/">Codon.UI.Data</a>,
+        for use with non-XAML based technologies such as Xamarin.Android and Xamarin.iOS;
+        and an Undo-Redo system located in the 
+        <a href="https://www.nuget.org/packages/Codon.UndoModel/">Codon.UndoModel</a> package.
+        Codon.UndoModel is downloadable as an independent package.
+    </p>
+    <p>Please visit the <a href="https://github.com/CodonFramework">Codon Framework's GitHub page</a> for more information.</p>
 </div>

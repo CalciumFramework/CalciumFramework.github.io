@@ -4,3 +4,4 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 encoding: utf-8
 highlighter: rouge
+repository: CodonFramework/CodonFramework.github.io

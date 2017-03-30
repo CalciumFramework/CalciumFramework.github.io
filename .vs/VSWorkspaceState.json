@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\blog",
+    "\\css",
     "\\External",
-    "\\External\\Images"
+    "\\External\\Images",
+    "\\_layouts",
+    "\\_posts"
   ],
   "PreviewInSolutionExplorer": false
 }
