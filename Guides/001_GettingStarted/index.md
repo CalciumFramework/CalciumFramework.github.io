@@ -1,5 +1,5 @@
 # Getting Started Part 1 - An Introduction to View-Model Initialization, Properties, and Commands
-
+## Introduction
 In this article, you see how to create a simple cross-platform app using Codon. You look at creating a .NET Standard library to contain your apps UI and business logic. You explore how to create view-models by deriving from a `ViewModelBase` class. You then touch on using one of Codon's core services: the dialog service, to display messages to the user.
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
@@ -27,7 +27,7 @@ UI elements have thread affinity with the UI thread. All changes must be perform
 
 **Listing 1.** Using the Set method.
 
-```cs
+``` csharp
 string foo;
 
 public string Foo
@@ -38,14 +38,11 @@ public string Foo
 ```
 
 If you need to check whether the value was actually set, the `Set` method returns an `AssignmentResult` enumeration value, which can be one of the following:
-* AlreadyAssigned
-* Indicates that the field was already set to the specified value.
-* Cancelled
-	* Indicates that a subscriber to the class PropertyChanging event, decided to cancel the update.
-* OwnerDisposed
-	* Indicates that view-model was disposed.
-* Success
-	* Indicates that the field was set to the specified value.
+
+* AlreadyAssigned: Indicates that the field was already set to the specified value.
+* Cancelled: Indicates that a subscriber to the class PropertyChanging event, decided to cancel the update.
+* OwnerDisposed: Indicates that view-model was disposed.
+* Success: Indicates that the field was set to the specified value.
 
 ### Using Dependency Injection to Initialize a View-Model
 Codon's default IoC container supports dependency injection, so that if we request an instance of the `Page1ViewModel` it is automatically populated with the dialog service, navigation service, and settings service. See Listing 2. We explore the services later in the article.
@@ -167,6 +164,9 @@ You may assume that we have to something radically dissimilar with Xamarin Andro
 **NOTE:** Layout file binding requires that the Android project has a reference to the *Codon.Extras* package.
 
 We explore how to configure data-binding in Android later.
+
+## Conclusion
+
 
 In this article, you saw how to create a simple cross-platform app using Codon. You looked at creating a .NET Standard library to contain your apps UI and business logic. You explored how to create view-models by deriving from a `ViewModelBase` class. You then touched on using one of Codon's core services: the dialog service, to display messages to the user.
 In the [next part]( 002_Getting_Started_2.html), we return to .NET Standard project to further explore the view-model logic and we look at using Codon's settings service. 

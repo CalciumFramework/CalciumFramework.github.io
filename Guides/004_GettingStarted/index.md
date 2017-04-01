@@ -1,4 +1,5 @@
 # Getting Started Part 4 - Navigating Between Pages Using the Navigation Service
+# Introduction
 In the [previous article](003_Getting_Started_3.html) you looked at enabling communication between components in your app using the `Messenger` class. In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
@@ -7,6 +8,7 @@ The page navigation APIs differ significantly across platforms. Some platforms, 
 
 **NOTE:** The URL can, in fact, be any string, and serves merely as a key to look up the associated Action. 
 
+## Understanding the Routing Service
 Codon *doesn't* require bootstrapping. Default IoC container registrations are performed automatically. However, if you intend to use Codon's navigation service for anything besides back navigation, you need to configure its routes. 
 
 In the sample, you can find a class named Bootstrapper in each platform project. Its sole purpose is to configure the routing service. 
@@ -19,13 +21,13 @@ Each of the `Bootstrapper` classes contain a `Run` method, which is called when 
 public void Run()
 {
 	/* This method should be called when your app starts. 
-		* The IoC container knows about several default types, 
-		* that's why no type registrations are necessary. */
+	 * The IoC container knows about several default types, 
+	 * that's why no type registrations are necessary. */
 	var routingService = Dependency.Resolve<IRoutingService>();
 
 	/* When the navigation service receives a request for "/Page2", 
-		* it uses the routing service to look up the path 
-		* and calls Navigate<Page2>(). */
+	 * it uses the routing service to look up the path 
+	 * and calls Navigate<Page2>(). */
 	routingService.RegisterPath(Routes.Page2, Navigate<Page2>);
 }
 ```
@@ -64,8 +66,8 @@ void Navigate(Type pageType)
 	var page = Dependency.ResolveWithType(pageType);
 
 	/* The platform specific implementation of INavigationService 
-		* has a Navigate(object) method that we can use navigate. 
-		* It automatically resolves the root Frame or NavigationPage. */
+	 * has a Navigate(object) method that we can use navigate. 
+	 * It automatically resolves the root Frame or NavigationPage. */
 	navigationService.Navigate(page);
 }
 ```
@@ -128,6 +130,6 @@ void NavigateBack(object arg)
 ```
 
 Each platform specific implementation of `INavigationService` knows how to perform a back navigation for its particular platform.
-
+# Conclusion
 In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
 

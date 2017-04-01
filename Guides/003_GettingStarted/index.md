@@ -1,10 +1,14 @@
 # Getting Started Part 3 - Passing Messages Between App Components
+
+## Introduction
 In the [previous article](002_Getting_Started_2.html) we looked at using Codon's settings service to store and retrieve settings. In this article, you look at enabling communication between components in your app.
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
 
 Communication between components is essential aspect of any mildly complex app. By using a weak referencing pub/sub messaging system you can decouple components and reduce the likelihood of memory leaks caused by event subscriptions.
 Codon's pub/sub messaging service is an implementation of the `IMessenger` interface. It allows components in your app to subscribe to events of a particular type, and for other components to publish messages. It's used extensively inside Codon itself for such things as notifying subscribers that a setting has changed. 
+
+## Understanding the Messenger
 Codon's `IMessenger` implementation uses an interface based subscription model. You nominate what messages you'd like your class to receive by implementing the `IMessageSubscriber<T>` interface. The CLR `Type` of `T` determines the signature or identity of the message.  This declarative approach to message subscription increases transparency because message subscription is visible at the type level.
 To receive messages, a subscriber needs to call the messenger's Subscribe method. 
 
@@ -74,6 +78,7 @@ Tapping the *Publish Message* button on *Page 1* dispatches the message, and it 
 Dependency.Register<IExceptionHandler>(() => new MyExceptionHandler(), true);
 ```
 
+## Conclusion
 In this article, you looked at enabling communication between components using the `Messenger` class. In the [next part]( 004_Getting_Started_4.html), you look at navigating between pages using the navigation service
 
 
