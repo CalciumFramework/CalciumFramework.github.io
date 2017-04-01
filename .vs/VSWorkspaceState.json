@@ -3,10 +3,11 @@
     "",
     "\\blog",
     "\\css",
-    "\\External",
-    "\\External\\Images",
+    "\\Guides",
+    "\\_GuideEntries",
     "\\_layouts",
     "\\_posts"
   ],
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
