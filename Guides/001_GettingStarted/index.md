@@ -27,7 +27,7 @@ UI elements in UWP, WPF, and Android have thread affinity with the UI thread. Th
 
 **Listing 1.** Using the Set method.
 
-```cs
+```csharp
 string foo;
 
 public string Foo
@@ -51,7 +51,7 @@ The `Page1ViewModel` uses C# 7's new relaxed throw statements, combining them wi
 
 **Listing 2.** Page1ViewModel constructor.
 
-```cs
+```csharp
 public Page1ViewModel(
 	IDialogService dialogService, 
 	INavigationService navigationService,
@@ -71,7 +71,7 @@ public Page1ViewModel(
 In XAML based apps, `ICommands` are a commonly used way to connect UI elements, such as buttons, to your apps business logic. `ICommands` encapsulate what needs to be done when, for example, a button is tapped. In Codon, the principle `ICommand` implementation is the `ActionCommand` class. An `ActionCommand` must be initialized with an `Action` that is invoked when the `ActionCommand` is executed.
 
 `Page1ViewModel` contains a number of commands. Let's take a look at the `ShowDialogCommand`, which is declared as shown:
-```cs
+```csharp
 ActionCommand showDialogCommand;
 public ICommand ShowDialogCommand => showDialogCommand
 	?? (showDialogCommand = new ActionCommand(ShowDialog));
@@ -87,7 +87,7 @@ As an aside, there are other variations of the `ActionCommand` in Codon, includi
 The `ShowDialog` method is invoked when the `ICommand.Execute` method is called.
 
 `ShowDialog` uses the `IDialogService.ShowMessageAsync` method to display a message box to the user, as shown:
-```cs
+```csharp
 void ShowDialog(object arg)
 {
 	dialogService.ShowMessageAsync(
@@ -117,7 +117,7 @@ You may be wondering how Codon knows about the `IDialogService`, `ISettingsServi
 You can override a default type association by registering a type association using the `Dependency.Register` method. 
 
 **Listing 3.** Sample1.Uwp Page1 class excerpt.
-```cs
+```csharp
 public sealed partial class Page1 : Page
 {
     public Page1()
