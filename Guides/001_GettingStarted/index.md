@@ -80,7 +80,7 @@ public ICommand ShowDialogCommand => showDialogCommand
 
 The property uses lambda expressions for the getter and setter accessors. Its a concise way to express simple properties. The command is lazily instantiated, meaning that when the property is first retrieved, the `ActionCommand` is created.
 
-**NOTE:** Of course, the `ActionCommand` class also allow you to provide a `Func` to determine if the `ICommand` is executable. 
+**NOTE:** The `ActionCommand` class also allows you to provide a `Func` to determine if the `ICommand` is executable. 
 
 As an aside, there are other variations of the `ActionCommand` in Codon, including the `UICommand`, which has various properties, such as `Text` and `Visible` properties. In addition, the `UICompositeCommand` allows you to bind multiple commands to a single UI element. The Extras package also includes support for asynchronous commands if you need it. Advanced commanding is, however, outside the scope of this article.
 
