@@ -2,9 +2,6 @@ theme: jekyll-theme-minimal
 name: Codon
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  hard_wrap: false
 default_lang: csharp
 permalink: /blog/:year/:month/:day/:title
 encoding: utf-8

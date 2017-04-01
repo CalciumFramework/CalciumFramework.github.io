@@ -1,10 +1,10 @@
 # Getting Started Part 2 - Storing Data with the Settings Service
 ## Introduction
-In the [previous article](001_Getting_Started_1.html) we familiarised ourselves with view-model initialization and working with properties and commands. In this article, you see how to save and retrieve persistent data using the settings service. 
+In the [previous article](001_Getting_Started) we familiarised ourselves with view-model initialization and working with properties and commands. In this article, you see how to save and retrieve persistent data using the settings service. 
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
 
-Just about every app needs to store and retrieve settings. Codon provides an abstracted API for storing and retrieving settings via its `ISettingsService` implementations.  You may wonder why we should do this, and there are a couple of good reasons. While there exists an Isolated Storage Settings API in .NET Standard, it doesn't work as you might expect across all platforms. In particular, in the WPF implementation `IsolatedStorageSettings.ApplicationSettings` is null. Codon works around this issue with a custom implementation supporting WPF \*. 
+Just about every app needs to store and retrieve settings. Codon provides an abstracted API for storing and retrieving settings via its `ISettingsService` implementations.  You may wonder why it might be a good idea to abstract a set of APIs that is seemingly present across all supported platforms. There are a couple of reasons. While there exists an Isolated Storage Settings API in .NET Standard, the API doesn't behave as you might expect across all platforms. In particular, in the WPF implementation `IsolatedStorageSettings.ApplicationSettings` is null. Codon works around this issue with a custom implementation supporting WPF \*. 
 
 Another reason for abstracting the settings API is that it affords you the opportunity to swap out the underlying storage provider with, for example, an SQLite implementation. I did this for one of my apps when users started reporting settings being reset and I realised a more robust storage provider was required.
 
@@ -34,7 +34,7 @@ void UpdateCreationCount()
 }
 ```
 
-We bind the CreationCount property to text fields in UWP project, like so:
+We bind the CreationCount property to a text field in UWP project, like so:
 
 ```xml
 <TextBlock Text="{x:Bind ViewModel.CreationCount, Mode=OneWay}" />
@@ -58,7 +58,7 @@ While in the Android project, we do this:
 
 ## Conclusion
 
-In this article, you saw how to save and retrieve persistent data using the settings service. In the [next part]( 003_Getting_Started_3.html), we look at passing messages between app components. 
+In this article, you saw how to save and retrieve persistent data using the settings service. In the [next part](003_Getting_Started), we look at passing messages between app components. 
 
 
 
