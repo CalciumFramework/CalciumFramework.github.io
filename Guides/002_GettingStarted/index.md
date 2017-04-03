@@ -1,6 +1,6 @@
 # Getting Started Part 2 - Storing Data with the Settings Service
 ## Introduction
-In the [previous article](001_Getting_Started) we familiarised ourselves with view-model initialization and working with properties and commands. In this article, you see how to save and retrieve persistent data using the settings service. 
+In the [previous article](../001_GettingStarted) we familiarised ourselves with view-model initialization and working with properties and commands. In this article, you see how to save and retrieve persistent data using the settings service. 
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
 
@@ -58,7 +58,7 @@ While in the Android project, we do this:
 
 ## Conclusion
 
-In this article, you saw how to save and retrieve persistent data using the settings service. In the [next part](003_Getting_Started), we look at passing messages between app components. 
+In this article, you saw how to save and retrieve persistent data using the settings service. In the [next part](../003_GettingStarted), we look at passing messages between app components. 
 
 
 

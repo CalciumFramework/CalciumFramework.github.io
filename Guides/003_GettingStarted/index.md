@@ -1,7 +1,7 @@
 # Getting Started Part 3 - Passing Messages Between App Components
 
 ## Introduction
-In the [previous article](002_Getting_Started) we looked at using Codon's settings service to store and retrieve settings. In this article, you look at enabling communication between components in your app.
+In the [previous article](../002_GettingStarted) we looked at using Codon's settings service to store and retrieve settings. In this article, you look at enabling communication between components in your app.
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
 
@@ -73,7 +73,7 @@ void PublishMessage(object arg)
 
 Tapping the *Publish Message* button on *Page 1* dispatches the message, and it is received within the same view-model. See Figure 1. Although pointless, it demonstrates how to send and receive a message. You wouldn't ordinarily subscribe to a message that is only dispatched from the same class.
 
-![Dialog confirming message received](/Guides/003_GettingStarted/MessageReceivedDialog.png)
+![Dialog confirming message received](MessageReceivedDialog.png)
 
 **Figure 1.** Dialog box confirms message received.
 
@@ -86,6 +86,6 @@ Dependency.Register<IExceptionHandler>(() => new MyExceptionHandler(), true);
 ```
 
 ## Conclusion
-In this article, you looked at enabling communication between components using the `Messenger` class. In the [next part](004_Getting_Started), you look at navigating between pages using the navigation service
+In this article, you looked at enabling communication between components using the `Messenger` class. In the [next part](../004_GettingStarted), you look at navigating between pages using the navigation service
 
 

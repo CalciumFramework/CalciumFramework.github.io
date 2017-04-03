@@ -1,6 +1,6 @@
 # Getting Started Part 4 - Navigating Between Pages Using the Navigation Service
 # Introduction
-In the [previous article](003_Getting_Started_3.html) you looked at enabling communication between components in your app using the `Messenger` class. In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
+In the [previous article](../003_GettingStarted) you looked at enabling communication between components in your app using the `Messenger` class. In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
 
 The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
 

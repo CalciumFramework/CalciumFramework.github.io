@@ -167,5 +167,5 @@ There's no built-in binding infrastructure for Xamarin Android. So, you'd be for
 
 
 In this article, you saw how to create a simple cross-platform app using Codon. You looked at creating a .NET Standard library to contain your apps UI and business logic. You explored how to create view-models by deriving from a `ViewModelBase` class. You then touched on using one of Codon's core services: the dialog service, to display messages to the user.
-In the [next part](002_Getting_Started), we return to .NET Standard project to further explore the view-model logic and we look at using Codon's settings service. 
+In the [next part](../002_GettingStarted), we return to .NET Standard project to further explore the view-model logic and we look at using Codon's settings service. 
 
