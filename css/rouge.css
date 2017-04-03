@@ -220,3 +220,9 @@
 div .language-xml .s {
     color: #0000FF;
 }
+
+code.highlighter-rouge {
+    color: #900;
+    font: 1.05em Consolas,"Courier New",Courier,mono;
+    font-weight: normal
+}
