@@ -226,3 +226,7 @@ code.highlighter-rouge {
     font: 1.05em Consolas,"Courier New",Courier,mono;
     font-weight: normal
 }
+
+pre.highlight {
+    padding: 1em;
+}
