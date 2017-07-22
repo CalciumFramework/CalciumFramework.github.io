@@ -1,6 +1,3 @@
----
-layout: test
----
 # Getting Started Part 4 - Navigating Between Pages Using the Navigation Service
 # Introduction
 In the [previous article](../003_GettingStarted) you looked at enabling communication between components in your app using the `Messenger` class. In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
