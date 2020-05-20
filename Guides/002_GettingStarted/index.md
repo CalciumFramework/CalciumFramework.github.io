@@ -2,13 +2,13 @@
 ## Introduction
 In the [previous article](../001_GettingStarted) we familiarised ourselves with view-model initialization and working with properties and commands. In this article, you see how to save and retrieve persistent data using the settings service. 
 
-The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
+The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CalciumFramework/Samples)
 
-Just about every app needs to store and retrieve settings. Codon provides an abstracted API for storing and retrieving settings via its `ISettingsService` implementations.  You may wonder why it might be a good idea to abstract a set of APIs that is seemingly present across all supported platforms. There are a couple of reasons. While there exists an Isolated Storage Settings API in .NET Standard, the API doesn't behave as you might expect across all platforms. In particular, in the WPF implementation `IsolatedStorageSettings.ApplicationSettings` is null. Codon works around this issue with a custom implementation supporting WPF \*. 
+Just about every app needs to store and retrieve settings. Calcium provides an abstracted API for storing and retrieving settings via its `ISettingsService` implementations.  You may wonder why it might be a good idea to abstract a set of APIs that is seemingly present across all supported platforms. There are a couple of reasons. While there exists an Isolated Storage Settings API in .NET Standard, the API doesn't behave as you might expect across all platforms. In particular, in the WPF implementation `IsolatedStorageSettings.ApplicationSettings` is null. Calcium works around this issue with a custom implementation supporting WPF \*. 
 
 Another reason for abstracting the settings API is that it affords you the opportunity to swap out the underlying storage provider with, for example, an SQLite implementation. I did this for one of my apps when users started reporting settings being reset and I realised a more robust storage provider was required.
 
-**\*** See the `IsolatedStorageSettingsWpf` class in the Codon.Platform.Shared project if you're interested in the custom WPF `IsolatedStorageSettings` implementation.
+**\*** See the `IsolatedStorageSettingsWpf` class in the Calcium.Platform.Shared project if you're interested in the custom WPF `IsolatedStorageSettings` implementation.
 
 **NOTE:** The settings service is able to serialize and store any object or primitive. Binary serialization is used for complex types.
 
@@ -54,7 +54,7 @@ While in the Android project, we do this:
         android:id="@+id/Page1_TextView_ShownCount" ... />
 ```
 
-**NOTE:** Codon's Android data-binding infrastructure requires that views with data-bindings have an `android:id` attribute.
+**NOTE:** Calcium's Android data-binding infrastructure requires that views with data-bindings have an `android:id` attribute.
 
 ## Conclusion
 

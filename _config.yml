@@ -1,8 +1,8 @@
 theme: jekyll-theme-minimal
-name: Codon
+name: Calcium
 markdown: kramdown
 highlighter: rouge
 default_lang: csharp
 permalink: /blog/:year/:month/:day/:title
 encoding: utf-8
-repository: CodonFramework/CodonFramework.github.io
+repository: CalciumFramework/CalciumFramework.github.io

@@ -2,16 +2,16 @@
 # Introduction
 In the [previous article](../003_GettingStarted) you looked at enabling communication between components in your app using the `Messenger` class. In this article, you look at enabling page navigation using the routing service in conjunction with the navigation service.
 
-The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CodonFramework/Samples)
+The code presented herein is located in Sample001 in the [Samples repository](https://github.com/CalciumFramework/Samples)
 
 The page navigation APIs differ significantly across platforms. Some platforms, like the UWP, allow you to navigate to a page using its `Type`. In WPF, you navigate to a Page instance. While others use a completely different scheme, such as Android and its use of `Intents`. 
 
-To ease these differences, Codon employs a routing system, that allows you to register a string URL with an associated `Action`. When the navigation service receives a request to navigate to a particular URL, the action associated with that URL is invoked. 
+To ease these differences, Calcium employs a routing system, that allows you to register a string URL with an associated `Action`. When the navigation service receives a request to navigate to a particular URL, the action associated with that URL is invoked. 
 
 **NOTE:** The URL can, in fact, be any string, and serves merely as a key to look up the associated Action. 
 
 ## Understanding the Routing Service
-Codon does *not* require bootstrapping. Various default IoC container registrations are performed automatically. However, if you intend to use Codon's navigation service for anything besides back navigation, you need to configure its routes. 
+Calcium does *not* require bootstrapping. Various default IoC container registrations are performed automatically. However, if you intend to use Calcium's navigation service for anything besides back navigation, you need to configure its routes. 
 
 In the sample, you can find a class named Bootstrapper in each platform project. Its sole purpose is to configure the routing service. 
 
@@ -55,7 +55,7 @@ void Navigate(Type pageType)
 
 The sample `Bootstrapper` for WPF looks much the same as the UWP `Bootstrapper`, apart from its `Navigate` method. See Listing 3.
 
-The Codon `INavigationService` implementation for WPF contains a convenient helper method, which locates the built-in `System.Navigation.NavigationService` from current `Frame` or `Window`. Since we know the `Bootstrapper` is running on WPF we can safely cast the `INavigationService` to its concrete implementation `NavigationService`. 
+The Calcium `INavigationService` implementation for WPF contains a convenient helper method, which locates the built-in `System.Navigation.NavigationService` from current `Frame` or `Window`. Since we know the `Bootstrapper` is running on WPF we can safely cast the `INavigationService` to its concrete implementation `NavigationService`. 
 
 The WPF `Bootstrapper` uses the `Dependency` class to build-up the new page, which is then passed to the built-in `NavigationService` object.
 
@@ -80,7 +80,7 @@ The `Bootstrapper` class in the Sample Android app, works much the same as the o
 routingService.RegisterPath(Routes.Page2, () => LaunchActivity<Page2Activity>(1));
 ```
 
-Navigating in Xamarin Android requires an `Activity` or `Context` object. Because there isn't a global handle to the current `Activity`, Codon requires that when an `Activity` becomes active, it is registered with the IoC container. 
+Navigating in Xamarin Android requires an `Activity` or `Context` object. Because there isn't a global handle to the current `Activity`, Calcium requires that when an `Activity` becomes active, it is registered with the IoC container. 
 
 The non-generic `LaunchActivity` method of the Android Sample `Bootstrapper` retrieves the current `Activity` from the IoC container. See Listing 4. It then creates an `Intent` for the new activity. The new activity is started using the `Intent` object and a request code. There will be more on request codes in a later article.
 
